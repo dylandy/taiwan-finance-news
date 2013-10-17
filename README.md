@@ -14,6 +14,8 @@ programme every single day.
 5. Active-records<br>
 6. MySQL-server<br>
 7. NetWork<br>
+8. YAML<br>
+9. perfect print<br>
 
 ##Data Schema
 
@@ -43,7 +45,8 @@ programme every single day.
 
 * Build the development database first<br>
 * Create a table called "NewsTable"<br>
-* Change the password in news.rb with your own mysql server password<br>
+* Change the password and username in "database.yml" matching your own mysql server<br>
+* Change the path of your "database.yml" in "news.rb" to ensure that can connect to your database<br>
 * Execute the news.rb and then you can get the latest finance news from apple daily<br>
 * If you would like to make your programme execute every day, please checkout [this tutorial](http://dylandychat.blogspot.tw/2013/09/ubuntu-1304-cron.html).//Note that the tutorial was written in Chinese.
 
