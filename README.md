@@ -16,6 +16,17 @@ programme every single day.
 7. NetWork<br>
 
 ##Data Schema
+
+###Catalog
+<table>
+  <tr>
+    <td>column name</td><td>name</td><td>kind</td><td>create_at</td><td>updated_at</td>
+  </tr>
+  <tr>
+    <td>data type</td><td>string</td><td>integer</td><td>datetime</td><td>datetime</td>
+  </tr>
+</table>
+<strong>:kind => limit:1, null:false</strong>
 ###NewsTable
 
 <table>
@@ -26,6 +37,7 @@ programme every single day.
     <td>data type</td><td>date</td><td>string</td><td>string</td><td>string</td><td>integer</td>
   </tr>
 </table>
+<strong>:log_id,:oil_id => null:false</strong>
 
 ##Install
 

@@ -1,29 +1,23 @@
 # encoding:utf-8
+
 require 'rubygems'
 require 'open-uri'
 require 'nokogiri'
 require 'pp'
 require 'date'
 require 'active_record'
+require 'yaml'
 
 class Catalog < ActiveRecord::Base ; end
 class NewsTable < ActiveRecord::Base ; end
 
 module News
-  DB_CONNECTION_SETTING = {
-    adapter: "mysql2",
-    encoding: "utf8",
-    database: "project_development",
-    pool: 5,
-    username: "root",
-    password: '****',
-    socket: "/var/run/mysqld/mysqld.sock"
-  }
   def self.initialize
+    envrionment = ENV['RACK_ENV'] || 'development'
+    dbconfig = YAML.load(File.read('database.yml')) #change the path of your own database.yml
    	ActiveRecord::Base.logger = Logger.new(STDOUT)
 	  #ActiveRecord::Base.connection_pool.clear_reloadable_connections!
-    ActiveRecord::Base.establish_connection(DB_CONNECTION_SETTING)
-  end
+    ActiveRecord::Base.establish_dbconfig[environment]
 
   #go is main function 
   def self.go!
