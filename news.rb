@@ -15,8 +15,9 @@ module News
   def self.initialize
     envrionment = ENV['RACK_ENV'] || 'development'
     dbconfig = YAML.load(File.read('database.yml')) #change the path of your own database.yml
+
+    #for output the result to debugging
    	ActiveRecord::Base.logger = Logger.new(STDOUT)
-	  #ActiveRecord::Base.connection_pool.clear_reloadable_connections!
     ActiveRecord::Base.establish_dbconfig[environment]
 
   #go is main function 
@@ -27,7 +28,7 @@ module News
   
   def self.news_filter()
     doc = Nokogiri::HTML(open("http://www.appledaily.com.tw/appledaily/article/finance").read)
-    target = doc.css( 'li.echn h1 a')  #target1 for getting all the news address
+    target = doc.css( 'li.echn h1 a')  
     news_addr = {}
     
 	  puts "get #{target.length} news!!! yooooo!!!"
@@ -43,7 +44,7 @@ module News
            :date => Date.parse(date_txt)
 				 }
 			 end
-    end  # insert the address into news_addr array
+    end  
 		puts "db changes"
     
     NewsTable.where("serial IN (#{news_addr.keys.join(',')})").select('id , serial').each do |nt|
