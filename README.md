@@ -3,11 +3,13 @@
 
 This parser would get today finance news titles and pictures from Apple Dailay Inc.<br>
 Becareful！ This parser would only get one day news. To getting more days, please using scheduling machine to execute this
-programme every single day.
+programme every single day.<br>
+<br>
+*The news parsed from this parser are shown in Traditional Chinese.*<br>
 
 ##Require
 
-1. Ruby-2.0<br>
+1. Ruby-2.0 || Maybe Ruby-1.9 could run<br>
 2. Rubygems-current<br>
 3. Nokogiri<br>
 4. Open-uri<br>
