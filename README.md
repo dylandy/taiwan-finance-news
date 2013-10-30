@@ -49,6 +49,7 @@ programme every single day.<br>
 * Create a table called "NewsTable"<br>
 * Change the password and username in "database.yml" matching your own mysql server<br>
 * Change the path of your "database.yml" in "news.rb" to ensure that can connect to your database<br>
+* Change the path for your own database socket to ensure that you could connect to your mysql server properly.<br>
 * Execute the news.rb and then you can get the latest finance news from apple daily<br>
 * If you would like to make your programme execute every day, please checkout [this tutorial](http://dylandychat.blogspot.tw/2013/09/ubuntu-1304-cron.html).//Note that the tutorial was written in Chinese.
 
