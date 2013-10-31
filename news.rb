@@ -25,7 +25,8 @@ module News
     initialize()
     news_filter()
   end
-  
+
+  # get news address first then go to the second stage to get the big picture
   def self.news_filter()
     doc = Nokogiri::HTML(open("http://www.appledaily.com.tw/appledaily/article/finance").read)
     target = doc.css( 'li.echn h1 a')  
